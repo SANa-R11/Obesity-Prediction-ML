@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Predict - Obesity Predictor</title>
+  <link rel="stylesheet" href="../static/css/home.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+</head>
+<body>
+    {% if prediction %}
+  <script>
+    Swal.fire({
+      text: "Your Obesity Level",
+      title: '{{ prediction }}',    
+      icon: "success"
+    });
+  </script>
+{% endif %}
+  <header>
+    <nav class="navbar">
+      <h1 class="logo">Obesity Predictor</h1>
+      <ul class="nav-links">
+        <li><a href="/">Home</a></li>
+        <li><a href="/predict">Predict</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="form-section">
+    <div class="form-container">
+      <h2>Obesity Prediction Form</h2>
+      <form action="/predict" method="post" class="prediction-form">
+
+        <label>Gender</label>
+        <select name="gender" required>
+          <option value="">Select</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+        </select>
+
+        <label>Age</label>
+        <input type="number" step="0.1" name="age" required />
+
+        <label>Height (meters)</label>
+        <input type="number" step="0.01" name="height" required />
+
+        <label>Weight (kg)</label>
+        <input type="number" step="0.1" name="weight" required />
+
+        <label>Family History of Overweight?</label>
+        <select name="family_history" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label>Eat High Caloric Food Frequently?</label>
+        <select name="FAVC" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label>Frequency of Vegetables in Meals</label>
+        <input type="number" step="0.1" name="FCVC" required />
+
+        <label>Number of Main Meals Daily</label>
+        <input type="number" step="0.1" name="NCP" required />
+
+        <label>Food Between Meals</label>
+        <select name="CAEC" required>
+          <option value="">Select</option>
+          <option value="no">No</option>
+          <option value="Sometimes">Sometimes</option>
+          <option value="Frequently">Frequently</option>
+          <option value="Always">Always</option>
+        </select>
+
+        <label>Do You Smoke?</label>
+        <select name="SMOKE" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label>Liters of Water Daily</label>
+        <input type="number" step="0.1" name="CH2O" required />
+
+        <label>Monitor Calories Daily?</label>
+        <select name="SCC" required>
+          <option value="">Select</option>
+          <option value="yes">Yes</option>
+          <option value="no">No</option>
+        </select>
+
+        <label>Daily Workout Frequency</label>
+        <input type="number" step="0.1" name="FAF" required />
+
+        <label>Technology Usage (Hours)</label>
+        <input type="number" step="0.1" name="TUE" required />
+
+        <label>Alcohol Consumption</label>
+        <select name="CALC" required>
+          <option value="">Select</option>
+          <option value="no">No</option>
+          <option value="Sometimes">Sometimes</option>
+          <option value="Frequently">Frequently</option>
+          <option value="Always">Always</option>
+        </select>
+
+        <label>Transportation Method</label>
+        <select name="MTRANS" required>
+          <option value="">Select</option>
+          <option value="Public_Transportation">Public Transportation</option>
+          <option value="Walking">Walking</option>
+          <option value="Automobile">Automobile</option>
+          <option value="Motorbike">Motorbike</option>
+          <option value="Bike">Bike</option>
+        </select>
+
+        <button type="submit" class="btn">Predict Obesity Level</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Obesity Predictor. All rights reserved.</p>
+  </footer>
+</body>
+</html>
