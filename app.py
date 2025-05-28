@@ -78,19 +78,19 @@ def obesityPrediction(Gender="Male", Age=43, Height=180, Weight=87, family_histo
     result=obesity_model.predict(lst)
     print(result)
     if result==0:
-        return "Insufficient_Weight"
+        return "Insufficient Weight"
     elif result==1:
-        return 'Normal_Weight'
+        return 'Normal Weight'
     elif result==2:
-        return 'Obesity_Type_I'
+        return 'Obesity Type I'
     elif result==3:
-        return 'Obesity_Type_II'
+        return 'Obesity Type II'
     elif result==4:
-        return 'Obesity_Type_III'
+        return 'Obesity Type III'
     elif result==5:
-        return 'Overweight_Level_I'
+        return 'Overweight Level I'
     elif result==6:
-        return 'Overweight_Level_II'
+        return 'Overweight Level II'
     
 
 
